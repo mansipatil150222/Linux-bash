@@ -1,0 +1,23 @@
+static library creation Procedure
+
+calc_mean.c calc_sub.c calc_mean.h main.c
+
+    Generate objects files respectively
+    $ gcc -c calc_mean.c -o calc_mean.o
+    $ gcc -c calc_sub.c -o calc_sub.objects
+    $ ls
+    calc_mean.o calc_sub.objects
+
+    $ar rcs lib_st.a    calc_mean.o calc_sub.o
+
+    $gcc -c main.c -o main.o //source code object files
+
+    $gcc -o main main.o -L lib_st.a //linking static lib with source code
+    $./main
+
+    $gcc -o main main.o -L. -lib_st
+    $ ./main
+
+
+#create libreary "libctest.a": ar rcs libctest.a ctest1.o ctest2.o
+# List files in library: ar -t libctest.a
